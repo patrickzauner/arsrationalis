@@ -4,12 +4,11 @@
     <meta charset="utf-8">
     <title>Ars Rationalis Punkterechner</title>
     <meta name="description" content="Berechne die verbleibende notwendige Punktzahl, um die Studienleistung für Ars Rationalis zu erhalten!">
-    <script src="script.js"></script>
   </head>
   <body>      
       <form>
-              <p>Hier bitte jeweils die Prozentanzahl der schon abgeschlossenen Tests eingeben!
-	          <input name="test1" type="integer" value=""/>% Test 1 <br /> 
+	      <p>Hier bitte jeweils die Prozentanzahl der schon abgeschlossenen Tests eingeben!</p>
+              <input name="test1" type="integer" value=""/>% Test 1 <br /> 
               <input name="test2" type="integer" value=""/>% Test 2 <br /> 
               <input name="test3" type="integer" value=""/>% Test 3 <br /> 
               <input name="test4" type="integer" value=""/>% Test 4 <br /> 
@@ -22,12 +21,11 @@
               <input name="test11" type="integer" value=""/>% Test 11 <br /> 
               <input name="test12" type="integer" value=""/>% Test 12 <br /> 
               <input name="test13" type="integer" value=""/>% Test 13 <br /> 
-              <input name="test14" type="integer" value=""/>% Test 14 <br /> 
            
-               <div id="Auswahl">
+               <div id="contentauswahl">
                 <p>
                    Bitte Anzahl absolvierter Tests auswählen:
-                <select>
+                <select id="auswahl">
                          <option value="1">1</option>
                          <option value="2">2</option>
                          <option value="3">3</option>
@@ -43,14 +41,43 @@
                          <option value="13">13</option>
                </select>
                </p>
-              </div id="Auswahl">  
-                       
-          
-	          <input name="blabla" type="checkbox" value="1" /> Diese Rechnung ist selbstverständlich nicht verbindlich.<br />
-	           
-          <button type="submit" value="Submit">Ausrechnen</button>
-</form>
+              </div>  	           
+          <button type="submit" onclick="Berechnung()">Ausrechnen</button>
+	  </form>
+	 
+	  <p>Ergebnis:<p>
+	  <p id="punkte"></p>
+	  <p id="prozent"></p>
+	  
+	 
   </body>
+	<script>
+		function Berechnung() { 
+		var test1 = document.getElementById("test1");	
+		var test2 = document.getElementById("test2");	
+		var test3 = document.getElementById("test3");	
+		var test4 = document.getElementById("test4");	
+		var test5 = document.getElementById("test5");	
+		var test6 = document.getElementById("test6");	
+		var test7 = document.getElementById("test7");	
+		var test8 = document.getElementById("test8");	
+		var test9 = document.getElementById("test9");	
+		var test10 = document.getElementById("test10");	
+		var test11 = document.getElementById("test11");	
+		var test12 = document.getElementById("test12");	
+		var test13 = document.getElementById("test13");	
+		var summe = (test1 + test2 + test3 + test4 + test5 + test6 + test7 + test8 + test9 +test10 + test11 + test12 + test13)/2;
+		var anzahl = document.getElementById("auswahl");
+		
+		var Ergebnis;
+		Ergebnis =(375 - summe)*2;
+		document.getElementById("prozent").innerHTML = Ergebnis/2 ; 
+		document.getElementById("prozent").innerHTML = Ergebnis; 
+		
+			
+		}
+		
+	</script>
 </html>
     
 
